@@ -1,14 +1,28 @@
-<!doctype html>
-<html>
-    <head>
-        <title>{{ title }}</title>
-        {% assets "css_all" %}
-            <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}"></script>
-        {% endassets %}
-        {% block head %}{% endblock %}
-    <head>
-    <body>
-        {% block body %}{% endblock %}
-        <script src="/static/js/app.js"></script>
-    </body>
-</html>
+{% extends "shared.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block body %}
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Site Title</li>
+      <li>
+        <a href="#">One</a>
+        <ul class="menu vertical">
+          <li><a href="#">One</a></li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+    </ul>
+  </div>
+</div>
+<a href="about.html" class="button">Learn More</a>
+{% endblock %}
